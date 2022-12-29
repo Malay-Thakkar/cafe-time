@@ -27,7 +27,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food2.jpg" alt="slide-2" />
+                        <img className="d-block w-100" src="./img/food3.jpg" alt="slide-2" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -35,7 +35,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food3.jpg" alt="slide-3" />
+                        <img className="d-block w-100" src="./img/food4.jpg" alt="slide-3" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -43,7 +43,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food4.jpg" alt="slide-4" />
+                        <img className="d-block w-100" src="./img/food2.jpg" alt="slide-4" />
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food5.jpg" alt="slide-5" />

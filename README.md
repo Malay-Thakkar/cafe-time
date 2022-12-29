@@ -1,3 +1,14 @@
+functions 
+[+] Register a user
+[+] Login a user
+[+] Who am I
+[+] Refresh the token
+[+] Logout the user
+[+] Add new product
+[+] Update a product
+[+] Get all products
+[+] Get single product
+[+] Delete a product
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
