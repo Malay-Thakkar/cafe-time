@@ -14,6 +14,18 @@ import { getCart, storeCart } from './helper'
 
 const Navigationbar = () => {
   const [cart, setCart] = useState({});
+  // const [Mode, setMode] = useState('light');
+  //change theam
+  // const toggleMode = () => {
+  //   if (mode === 'light') {
+  //     setMode('dark');
+  //     document.body.style.backgroundColor = 'grey';
+  //   }
+  //   else {
+  //     setMode('light');
+  //     document.body.style.backgroundColor = 'white';
+  //   }
+  // };
   // Fetch cart from local storage
   useEffect(() => {
     getCart().then(cart => {
@@ -27,27 +39,34 @@ const Navigationbar = () => {
   return (
     <>
       <Router>
-        <nav className='flex-container topnav sticky-top mx-auto flex items-center justify-between py-2'>
+          <nav className='topnav sticky-top mx-auto flex items-center justify-between py-2 navbar navbar-expand-lg navbar-light'>
           <Link className="ml-5 " to="/">
             <img style={{ height: 50 }} src="logo.png" alt="logo" />
           </Link>
-
-          <ul className="flex items-center text-black">
-          <li><Link to="/">Home</Link></li>
-            <li className="ml-6"><Link to="/product">Product</Link></li>
-            <li className="ml-6"><Link to="/me">Profile</Link></li>
-            <li className="ml-6"><Link to="/login">Login</Link></li>
-            <li className="ml-3 mr-3">
-              <Link to="/cart">
-                <div className='cartStyle'>
-                  <span>{cart.totalItems ? cart.totalItems : 0}</span>
-                  <img className='ml-2' src="cart.svg" alt="cart-icon" />
-                </div>
-              </Link>
-            </li>
-          </ul>
-
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        
+          <div className="collapse navbar-collapse justify-between" id="navbarSupportedContent"> 
+            <ul className="items-center text-black navbar-nav mr-auto spaceing">
+              <li className="ml-6"><Link to="/">Home</Link></li>
+              <li className="ml-6"><Link to="/product">Product</Link></li>
+              <li className="ml-6"><Link to="/me">Profile</Link></li>
+              <li className="ml-6"><Link to="/login">Login</Link></li>
+              <li className="ml-6 mr-3">
+                {/* <li className=''><button><img className='ml-2' src="cart.svg" alt="cart-icon" /></button></li> */}
+                <Link to="/cart">
+                  <div className='cartStyle'>
+                    <span>{cart.totalItems ? cart.totalItems : 0}</span>
+                    <img className='ml-2' src="cart.svg" alt="cart-icon" />
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>
+
+
         <CartContext.Provider value={{ cart, setCart }}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -58,7 +77,7 @@ const Navigationbar = () => {
             <Route path="/Cart" element={<Cart />} />
           </Routes>
         </CartContext.Provider>
-        </Router>
+      </Router>
     </>
 
   )
