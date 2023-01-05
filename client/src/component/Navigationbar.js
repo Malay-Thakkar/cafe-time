@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
 import Home from './Home';
-import About from './About';
 import Product from './Product';
+import Profile from './Profile';
+import Login from './Login'
 import SingleProduct from './SingleProduct';
 import Cart from './Cart';
 import { useEffect, useState } from 'react';
@@ -32,9 +33,10 @@ const Navigationbar = () => {
           </Link>
 
           <ul className="flex items-center text-black">
-            <li><Link to="/">Home</Link></li>
-            <li className="ml-6"><Link to="/about">About</Link></li>
+          <li><Link to="/">Home</Link></li>
             <li className="ml-6"><Link to="/product">Product</Link></li>
+            <li className="ml-6"><Link to="/me">Profile</Link></li>
+            <li className="ml-6"><Link to="/login">Login</Link></li>
             <li className="ml-3 mr-3">
               <Link to="/cart">
                 <div className='cartStyle'>
@@ -49,14 +51,14 @@ const Navigationbar = () => {
         <CartContext.Provider value={{ cart, setCart }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/product" exeact element={<Product />} />
             <Route path="/product/:_id" element={<SingleProduct />} />
+            <Route path="/me" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/Cart" element={<Cart />} />
           </Routes>
         </CartContext.Provider>
-
-      </Router>
+        </Router>
     </>
 
   )

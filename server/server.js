@@ -28,8 +28,19 @@ app.use('/uploads', express.static('uploads'));
 app.use('/', (req, res) => {
     res.send(`
   <h1>Welcome to E-commerce Rest APIs</h1>
-  You may contact me <a href="https://codersgyan.com/links/">here</a>
-  Or You may reach out to me for any question related to this Apis: codersgyan@gmail.com
+  You may contact me <a href="https://malay-thakkar.github.io/website/website/index.html">here</a>
+  Or You may reach out to me for any question related to this Apis: its.malaythakkar@gmail.com <br/>
+  functions 
+[+] Register a user
+[+] Login a user
+[+] Who am I(Profile)
+[+] Refresh the token
+[+] Logout the user
+[+] Add new product
+[+] Update a product
+[+] Get all products
+[+] Get single product
+[+] Delete a product
   `);
 });
 
