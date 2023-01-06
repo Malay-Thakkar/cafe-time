@@ -5,7 +5,8 @@ import ProductItems from './ProductItems';
 const Product = () => {
   const [products,setproducts]= useState([]);
   useEffect(()=>{
-    fetch('/api/products')
+    // https://fakestoreapi.com/products/
+    fetch('api/products')
     .then(response=>response.json())
     .then(products=>{
       setproducts(products);

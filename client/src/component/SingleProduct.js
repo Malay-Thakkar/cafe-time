@@ -19,7 +19,7 @@ const SingleProduct = () => {
             <div className="container mx-auto mt-12 mb-20">
                 <button className="mb-12 font-bold bg-gray-200 py-1 rounded-full px-4" onClick={() => { navigate('/products', { replace: true }) }}>Back to Products</button>
                 <div className="flex">
-                    <img src={product.image} alt="pizza" />
+                    <img src={product.image} className="product-img card" alt="pizza" />
                     <div className="ml-16">
                         <h1 className="text-xl font-bold">{product.name}</h1>
                         <div className="text-md">{product.size}</div>

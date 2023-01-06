@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+.product-img {
+    height: 200px;
+    align-items: center;
+}
+
 
 /* ============== Cart ============== */
 
