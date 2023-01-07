@@ -23,7 +23,8 @@ const Home = () => {
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
-                            <Link to="/product"><p className="text-left font-weight-bold font-italic text-primary">Order now!</p></Link>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>
                         </div>
                     </div>
                     <div className="carousel-item">
@@ -31,31 +32,56 @@ const Home = () => {
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
-                            <Link to="/product"><p className="text-left font-weight-bold font-italic text-primary">Order now!</p></Link>
-                        </div>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button> </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food4.jpg" alt="slide-3" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
-                            <Link to="/product"><p className="text-left font-weight-bold font-italic text-primary">Order now!</p></Link>
-                        </div>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food2.jpg" alt="slide-4" />
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
+                            <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food5.jpg" alt="slide-5" />
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
+                            <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food6.jpg" alt="slide-6" />
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
+                            <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food7.jpg" alt="slide-7" />
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
+                            <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
                         <img className="d-block w-100" src="./img/food8.jpg" alt="slide-8" />
+                        <div className="carousel-caption d-none d-md-block ">
+                            <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
+                            <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
+                            <button className='bg-yellow-500 rounded-full text-center d-flex align-items-start px-4'>
+                                <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
 
                 </div>
@@ -71,7 +97,7 @@ const Home = () => {
             <div className='m-5 pb-24'>
                 <Product />
             </div>
-          
+
         </>
 
     )
