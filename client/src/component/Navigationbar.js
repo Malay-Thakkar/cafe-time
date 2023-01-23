@@ -1,9 +1,14 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
+import Dashboard from './admin/Dashboard';
+import {Addproduct} from './admin/Addproduct';
+import Updateproduct from './admin/Updateproduct';
+import Deleteproduct from './admin/Deleteproduct';
 import Home from './Home';
 import Product from './Product';
 import Profile from './Profile';
 import Login from './Login'
+import Register from './Register'
 import Error from './Error';
 import SingleProduct from './SingleProduct';
 import Cart from './Cart';
@@ -15,8 +20,9 @@ import '../App.css';
 import { getCart, storeCart } from './helper'
 
 
+
 const Navigationbar = () => {
-  // const [admin,setadmin]=useState(false);
+  // const [showadmin,setshowadmin]=useState(true);
   const [cart, setCart] = useState({});
   const [theme, settheme] = useState("light");
   const [icon, seticon] = useState(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-moon-stars-fill" viewBox="0 0 16 16">
@@ -70,6 +76,9 @@ const Navigationbar = () => {
 
             <div className="collapse navbar-collapse justify-between" id="navbarSupportedContent">
               <ul className="items-center text-black navbar-nav mr-auto spaceing">
+               {/* { showadmin?<li className="ml-6"><Link to="/dashboard">Dashboard</Link></li>:null}
+               <button className="ml-6" onClick={()=>setshowadmin(false)}>hide</button> */}
+                <li ><Link to="/dashboard">Dashboard</Link></li>
                 <li className="ml-6"><Link to="/">Home</Link></li>
                 <li className="ml-6"><Link to="/product">Product</Link></li>
                 <li className="ml-6"><Link to="/me">Profile</Link></li>
@@ -109,7 +118,7 @@ const Navigationbar = () => {
                   <Link to="/cart">
                     <div className='cartStyle'>
                       <span>{cart.totalItems ? cart.totalItems : 0}</span>
-                      <img className='ml-2' src="cart.svg" alt="cart-icon" />
+                      <img className='ml-2 mr-3' src="cart.svg" alt="cart-icon" />
                     </div>
                   </Link>
                 </li>
@@ -120,11 +129,16 @@ const Navigationbar = () => {
           <CartContext.Provider value={{ cart, setCart }}>
 
             <Routes>
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/addproduct" element={<Addproduct />} />
+              <Route path="/updateproduct" element={<Updateproduct />} />
+              <Route path="/deleteproduct" element={<Deleteproduct />} />
               <Route path="/" element={<Home />} />
               <Route path="/product" exeact element={<Product />} />
               <Route path="/product/:_id" element={<SingleProduct />} />
               <Route path="/me" element={<Profile />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route path="/Cart" element={<Cart />} />
               <Route path="*" element={<Error />} />
             </Routes>

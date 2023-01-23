@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { CartContext } from './CartContext';
-
+import '../App.css'
 const ProductItems = (props) => {
   const [isAdding, setIsAdding] = useState(false);
     const { cart, setCart } = useContext(CartContext);
@@ -41,11 +41,11 @@ const ProductItems = (props) => {
   return (
     <>
 
-      <div className='bg-gray-200 items-center rounded-lg hover:bg-gray-300 '>
+      <div className='bg-gray-200 items-center rounded-lg hover:bg-gray-300'>
         <div className='m-2'>
           <Link to={`/product/${product._id}`}>
             {/*for image https://source.unsplash.com/200x200?pizza */}
-            <img src={product.image} alt="product_image" />
+            <img src={product.image} alt="product_image" className='product' />
 
             <div className='text-center font-bold'>
               <h4 className=' m-2 py-2'>{product.name}</h4>

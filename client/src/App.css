@@ -9,9 +9,9 @@
     text-align: center;
 }
 
-.product-img {
+.product {
     height: 200px;
-    align-items: center;
+    width: 200px;
 }
 
 
