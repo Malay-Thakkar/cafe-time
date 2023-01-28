@@ -1,119 +1,45 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import Adminnav from './Adminnav';
-// import { Navigate } from 'react-router-dom';
+
 
 export const Addproduct = () => {
   const [name, setName] = useState('')
   const [price, setprice] = useState('')
   const [size, setsize] = useState('')
   const [image, setimage] = useState('')
-  // const [navigate, setNavigate] = useState(false);
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQzNzU0NzYsImV4cCI6MTcwNTkzMzA3Nn0.4I5kKDc2nIV9YJKdP3DfzEMas8bcXGtTFlO6gWsEvxE';
+
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ5MTA2ODgsImV4cCI6MTcwNjQ2ODI4OH0.J6h--_q8A8PAf_J6v6fdIXqbjoT3VHzlNCqY92mRRog';
   const api = 'http://localhost:5000/api/products';
 
 
   async function addproduct(event) {
-    event.preventDefault()
-    var body = {
-        name:'malay',
-        price:'777',
-        size:'medlarge',
-        image:'C:\fakepath-15.jpg',
-      // name,
-      // price,
-      // size,
-      // image,
+
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `barer ${token}`,
+        }
+      };
+
+      axios.post(`${api}`, {
+        name,
+        price,
+        size,
+        image,
+
+      }, config)
+        .then(function (response) {
+          console.log(response.data)
+          alert("hi");
+        })
     }
-
-    axios({
-      method: 'post',
-      url: `${api}`,
-      data: body,
-      headers: {
-        'Authorization': `bearer ${token}`,
-      },
-
-    })
-      // .then(function (response) {
-      //   console.log(response);
-      // })
-      .catch(function (error) {
-        console.log(error);
-      });
+    catch (error) {
+      console.log(error)
+    }
   }
 
-  //   axios.post(`${api}`, {
-  //     headers: {
-  //       'Authorization': `bearer ${token}`,
-  //     },
-
-  //   })
-  //     .catch((error) => {
-  //       console.error(error)
-  //     })
-
-  // }
-  //   try {
-  //     event.preventDefault()
-  //     await axios.post(`${api}`, {
-  //       headers: {
-  //         'Authorization': `bearer ${token}`
-  //       },
-  //       data: {
-  // name,
-  // price,
-  // size,
-  // image,
-  //       }
-  //     });
-  //     setNavigate(true);
-  //   }
-
-  //   catch (error) {
-  //     alert("invalid user!!!");
-  //     console.log(error);
-
-
-  //   }
-  // }
-
-  // if (navigate) {
-  //   alert('product added !!!');
-  //   return <Navigate to="/addproduct" />;
-  // }
-
-  // const Addproduct = () => {
-  // const [name, setName] = useState('')
-  // const [price, setprice] = useState('')
-  // const [size, setsize] = useState('')
-  // const [img, setimg] = useState('')
-  // const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NzIxMzgxMDQsImV4cCI6MTcwMzY5NTcwNH0.5DVpN7XmmuuVb5WGC07dOtprNRAqToHpqADKGWUXlA4';
-  // const api = 'http://localhost:5000/api/product';
-
-  //   async function addproduct(event) {
-  //     event.preventDefault()
-
-  //     const response = await fetch(`${api}`, {
-  //       method: 'POST',
-  // headers: {
-  //   'Content-Type': 'application/json',
-  //   'Authorization': `barer ${token}`,
-  // },
-  //       body: JSON.stringify({
-  // name,
-  // price,
-  // size,
-  // img,
-  //       }),
-  //     })
-
-  //     const data = await response.json()
-
-  //     if (data.status === 'ok') {
-  //       alert("Register susscessfully");
-  //     }
-  //   }
 
   return (
     <>
@@ -169,7 +95,7 @@ export const Addproduct = () => {
                 value={image}
                 onChange={(e) => setimage(e.target.value)}
                 type="file"
-                name="file"
+                name="image"
                 required
                 className="form-control"
               />

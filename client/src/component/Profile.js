@@ -3,12 +3,15 @@ import axios from 'axios';
 
 export const Profile = () => {
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQzNzU0NzYsImV4cCI6MTcwNTkzMzA3Nn0.4I5kKDc2nIV9YJKdP3DfzEMas8bcXGtTFlO6gWsEvxE';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q0MGM1ZThiOGExMzJhYWM0ZGFkYzkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ5MDEzNzksImV4cCI6MTcwNjQ1ODk3OX0.806y61nfiDYq2cBaJIkeBwR8b8CtiEB4QHmL9Q2JQwE';
     const api = 'http://localhost:5000/api/me';
+    const apilogout = 'http://localhost:5000/api/logout';
     const [name, setname] = useState('');
     const [email, setemail] = useState('');
     const [role, setrole] = useState('');
     const [userid, setuserid] = useState('');
+ 
+
 
 
     axios.get(`${api}`, {
@@ -25,7 +28,28 @@ export const Profile = () => {
         .catch((error) => {
             console.error(error)
         })
-        
+
+    const logout = () => {
+        axios.post(`${apilogout}`, {
+            headers: {
+                'Authorization': `bearer ${token}`
+            },
+            data:{
+                "refresh_token":`${token}`
+            }
+
+        })
+            .then((res) => {
+                alert("logout");
+            })
+            .catch((error) => {
+                console.error(error)
+                console.log("logout");
+            })
+    }
+
+
+
 
     return (
         <>
@@ -37,6 +61,10 @@ export const Profile = () => {
                         <h5>Email id: {email}</h5>
                         <h5>User id: {userid}</h5>
                         <h5>Role: {role}</h5>
+            
+                        <div className="d-grid">
+                            <button className="btn btn-primary" onClick={() => logout()}>Logout</button>
+                        </div>
 
                     </div>
                 </div>
