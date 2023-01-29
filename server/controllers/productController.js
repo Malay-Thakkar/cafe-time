@@ -29,7 +29,9 @@ const productController = {
             if (err) {
                 return next(CustomErrorHandler.serverError(err.message));
             }
+            console.log(req.path);
             const filePath = req.file.path;
+            // const filePath =  "uploads\\1674911177552-875752539.jfif";
             // validation
             const { error } = productSchema.validate(req.body);
             if (error) {

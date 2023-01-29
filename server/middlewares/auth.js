@@ -1,7 +1,7 @@
 import CustomErrorHandler from '../services/CustomErrorHandler';
 import JwtService from '../services/JwtService';
 
-const auth = async (req, res, next) => {
+const auth = async(req, res, next) => {
     let authHeader = req.headers.authorization;
     if (!authHeader) {
         return next(CustomErrorHandler.unAuthorized());
@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
     const token = authHeader.split(' ')[1];
 
     try {
-        const { _id, role } = await JwtService.verify(token);
+        const { _id, role } = await JwtService.verifyrefreshtoken(token);
         const user = {
             _id,
             role
@@ -18,7 +18,7 @@ const auth = async (req, res, next) => {
         req.user = user;
         next();
 
-    } catch(err) {
+    } catch (err) {
         return next(CustomErrorHandler.unAuthorized());
     }
 

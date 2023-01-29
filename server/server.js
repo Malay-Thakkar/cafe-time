@@ -21,7 +21,7 @@ db.once('open', () => {
 
 global.appRoot = path.resolve(__dirname);
 app.use(cors());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //inbilt middleware
 app.use(express.json());
 app.use('/api', routes);
 app.use('/uploads', express.static('uploads'));

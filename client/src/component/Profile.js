@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const Profile = () => {
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q0MGM1ZThiOGExMzJhYWM0ZGFkYzkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ5MDEzNzksImV4cCI6MTcwNjQ1ODk3OX0.806y61nfiDYq2cBaJIkeBwR8b8CtiEB4QHmL9Q2JQwE';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ5ODQ4MzIsImV4cCI6MTcwNjU0MjQzMn0.s66uemv2K3o5lUlqoAPufrhnJX1a4tyJKZr7XEVNoaI';
     const api = 'http://localhost:5000/api/me';
     const apilogout = 'http://localhost:5000/api/logout';
     const [name, setname] = useState('');
