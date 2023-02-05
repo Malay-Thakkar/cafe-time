@@ -10,6 +10,7 @@ function Register() {
     const [password, setPassword] = useState('')
     const [repeat_password, setrepeat_password] = useState('')
     const [navigate, setNavigate] = useState(false);
+    let refreshtoken="";
     async function registerUser(event) {
         try {
             event.preventDefault()
@@ -18,8 +19,12 @@ function Register() {
                 email,
                 password,
                 repeat_password,
-            });
-            setNavigate(true);
+            })
+            .then(response =>{
+                refreshtoken=response.data.refresh_token;
+                localStorage.setItem("token",refreshtoken);
+                setNavigate(true);
+              })
         }
 
         catch (error) {

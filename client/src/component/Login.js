@@ -8,17 +8,27 @@ export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [navigate, setNavigate] = useState(false);
+    let refreshtoken="";
     async function handleSubmit(event) {
         try {
             event.preventDefault()
+            // let result = 
             await axios.post('http://localhost:5000/api/login', {
                 email,
                 password,
-            });
-            setNavigate(true);
+            })
+            .then(response =>{
+                refreshtoken=response.data.refresh_token;
+                localStorage.setItem("token",refreshtoken);
+                setNavigate(true);
+
+              })
         }
+        
+       
 
         catch (error) {
+            console.log(error);
             alert("invalid user!!!");
 
         }

@@ -4,8 +4,7 @@ import Adminnav from './Adminnav';
 
 const Deleteproduct = () => {
   const [product_id, setproduct_id] = useState('');
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ4OTk0MTIsImV4cCI6MTcwNjQ1NzAxMn0.MLzfXY3mRGdXzZTyBYsd0lSeeHfL-Cr8GnYUfcF3q30';
-
+  const token = localStorage.getItem('token');
   async function deleteproduct(event) {
 
     let api = `http://localhost:5000/api/products/${product_id}`;

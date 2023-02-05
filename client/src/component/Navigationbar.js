@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
+import jwt_decode from "jwt-decode";
 import Dashboard from './admin/Dashboard';
 import { Addproduct } from './admin/Addproduct';
 import Updateproduct from './admin/Updateproduct';
@@ -24,8 +25,9 @@ import { getCart, storeCart } from './helper'
 
 const Navigationbar = () => {
   
-  // const isadmin=true;
-  // const [showadmin,setshowadmin]=useState(true);
+
+  const [showadmin,setshowadmin]=useState(false);
+  const token = localStorage.getItem('token');
   const [cart, setCart] = useState({});
   const [theme, settheme] = useState("light");
   const [icon, seticon] = useState(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-moon-stars-fill" viewBox="0 0 16 16">
@@ -33,10 +35,18 @@ const Navigationbar = () => {
     <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
   </svg>);
 
-  // if(users.role==='admin')
-  // {
-  //   setshowadmin(false)
-  // }
+var decoded = jwt_decode(token);
+let role=decoded.role;
+
+useEffect(() => {
+  if("admin" === role){
+    setshowadmin(true);
+  }
+  //Runs only on the first render
+}, [role]);
+
+
+
 
 
 
@@ -88,9 +98,7 @@ return (
 
           <div className="collapse navbar-collapse justify-between" id="navbarSupportedContent">
             <ul className="items-center text-black navbar-nav mr-auto spaceing">
-              {/* { showadmin?<li className="ml-6"><Link to="/dashboard">Dashboard</Link></li>:null}
-              <button className="ml-6" onClick={()=>setshowadmin(false)}>hide</button> */}
-              <li ><Link to="/dashboard">Dashboard</Link></li>
+              { showadmin?<li><Link to="/dashboard">Dashboard</Link></li>:null}
               <li className="ml-6"><Link to="/">Home</Link></li>
               <li className="ml-6"><Link to="/product">Product</Link></li>
               <li className="ml-6"><Link to="/me">Profile</Link></li>

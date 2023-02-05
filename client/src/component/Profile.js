@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import axios from 'axios';
 
+
+
+
 export const Profile = () => {
 
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2FhYzBlMGRkMjI4YTNmZmM1YzZhOGUiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NzQ5ODQ4MzIsImV4cCI6MTcwNjU0MjQzMn0.s66uemv2K3o5lUlqoAPufrhnJX1a4tyJKZr7XEVNoaI';
+    const token = localStorage.getItem('token');
     const api = 'http://localhost:5000/api/me';
     const apilogout = 'http://localhost:5000/api/logout';
     const [name, setname] = useState('');
     const [email, setemail] = useState('');
     const [role, setrole] = useState('');
     const [userid, setuserid] = useState('');
+
  
-
-
-
     axios.get(`${api}`, {
         headers: {
             'Authorization': `bearer ${token}`
@@ -34,8 +35,8 @@ export const Profile = () => {
             headers: {
                 'Authorization': `bearer ${token}`
             },
-            data:{
-                "refresh_token":`${token}`
+            data: {
+                "refresh_token": `${token}`
             }
 
         })
@@ -61,7 +62,7 @@ export const Profile = () => {
                         <h5>Email id: {email}</h5>
                         <h5>User id: {userid}</h5>
                         <h5>Role: {role}</h5>
-            
+
                         <div className="d-grid">
                             <button className="btn btn-primary" onClick={() => logout()}>Logout</button>
                         </div>
