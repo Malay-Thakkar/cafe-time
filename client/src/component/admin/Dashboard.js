@@ -1,14 +1,13 @@
 import React from 'react'
-import Adminnav from './Adminnav';
-
+import SideAdminbar from './Sidebar/SideAdminbar'
 
 const Dashboard = () => {
   return (
     <>
-    <Adminnav />
-      <h1>hello</h1>
+    <div className='main-container'><SideAdminbar />
+      <div className='col'><h1>Welcome to Admin-Dashboard</h1></div>
+    </div>
     </>
-    
   )
 }
 

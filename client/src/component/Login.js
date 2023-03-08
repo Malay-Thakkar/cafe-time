@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
 
@@ -8,7 +8,10 @@ export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [navigate, setNavigate] = useState(false);
+    // const [reload, setreload] = useState(false);
     let refreshtoken="";
+
+ 
     async function handleSubmit(event) {
         try {
             event.preventDefault()
@@ -19,25 +22,29 @@ export const Login = (props) => {
             })
             .then(response =>{
                 refreshtoken=response.data.refresh_token;
-                localStorage.setItem("token",refreshtoken);
+                localStorage.setItem("token",refreshtoken); 
+                window.location.reload(false); 
                 setNavigate(true);
-
+                // setreload(true);
               })
-        }
-        
-       
 
+              
+        }
         catch (error) {
             console.log(error);
             alert("invalid user!!!");
 
         }
     }
-
     if (navigate) {
-        alert('Login susscessfully');
+        alert('Login susscessfully'); 
         return <Navigate to="/me" />;
     }
+    // if(reload){
+    //     alert("hey")
+           
+    // }
+
 
     return (
         <>

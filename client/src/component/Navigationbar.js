@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
 import jwt_decode from "jwt-decode";
+
 import Dashboard from './admin/Dashboard';
 import { Addproduct } from './admin/Addproduct';
 import Updateproduct from './admin/Updateproduct';
@@ -23,11 +24,10 @@ import { getCart, storeCart } from './helper'
 
 
 
-const Navigationbar = () => {
+const Navigationbar = (props) => {
 
-
+  const [islogin, setislogin] = useState(false);
   const [isadmin, setisadmin] = useState(false);
-  const token = localStorage.getItem('token');
   const [cart, setCart] = useState({});
   const [theme, settheme] = useState("light");
   const [icon, seticon] = useState(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-moon-stars-fill" viewBox="0 0 16 16">
@@ -35,15 +35,22 @@ const Navigationbar = () => {
     <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
   </svg>);
 
-  var decoded = jwt_decode(token);
-  let role = decoded.role;
 
   useEffect(() => {
-    if ("admin" === role) {
-      setisadmin(true);
+    var token = localStorage.getItem('token');
+    if (token !== null) {
+      setislogin(true);
+      var decoded = jwt_decode(token);
+      var role = decoded.role;
+      if ("admin" === role) {
+        setisadmin(true);
+      }
+    }
+    else {
+      setisadmin(false);
     }
     //Runs only on the first render
-  }, [role]);
+  }, []);
 
 
 
@@ -98,7 +105,7 @@ const Navigationbar = () => {
 
             <div className="collapse navbar-collapse justify-between" id="navbarSupportedContent">
               <ul className="items-center text-black navbar-nav mr-auto spaceing">
-                {isadmin ? <li><Link to="/dashboard">Dashboard</Link></li> : null}
+                {isadmin ? <li><Link to="/dashboard" id="dashboard">Dashboard</Link></li> : null}
                 <li className="ml-6"><Link to="/">Home</Link></li>
                 <li className="ml-6"><Link to="/product">Product</Link></li>
                 <li className="ml-6"><Link to="/me">Profile</Link></li>
@@ -147,14 +154,29 @@ const Navigationbar = () => {
           </nav>
 
           <CartContext.Provider value={{ cart, setCart }}>
+            {/* {isadmin ?
+              <SideAdminbar>
+                <Routes>
+                  {isadmin ? <Route path="/dashboard" element={<Dashboard />} /> : null}
+                  {isadmin ? <Route path="/addproduct" element={<Addproduct />} /> : null}
+                  {isadmin ? <Route path="/updateproduct" element={<Updateproduct />} /> : null}
+                  {isadmin ? <Route path="/deleteproduct" element={<Deleteproduct />} /> : null}
+                  {isadmin ? <Route path="/me" element={<Profile />} /> : null}
+                  {isadmin ? <Route path="/salse" element={<Deleteproduct />} /> : null}
+                  <Route path="*" element={<Error />} />
+                </Routes>
+              </SideAdminbar>
+              : null} */}
+
 
             <Routes>
               {isadmin ? <Route path="/dashboard" element={<Dashboard />} /> : null}
               {isadmin ? <Route path="/addproduct" element={<Addproduct />} /> : null}
               {isadmin ? <Route path="/updateproduct" element={<Updateproduct />} /> : null}
               {isadmin ? <Route path="/deleteproduct" element={<Deleteproduct />} /> : null}
-             
-              <Route path="/me" element={<Profile />} />
+              {isadmin ? <Route path="/salse" element={<Deleteproduct />} /> : null}
+              {islogin ? <Route path="/me" element={<Profile />} /> : null}
+              {/* <Route path="/me" element={<Profile />} /> */}
               <Route path="/" element={<Home />} />
               <Route path="/product" exeact element={<Product />} />
               <Route path="/product/:_id" exeact element={<SingleProduct />} />
@@ -166,6 +188,7 @@ const Navigationbar = () => {
 
           </CartContext.Provider>
         </Router>
+
 
       </ThemeProvider>
     </>
