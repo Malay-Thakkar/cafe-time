@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cafe-time/static/css/main.012fb1d4.css",
+    "main.js": "/cafe-time/static/js/main.f0821ded.js",
+    "index.html": "/cafe-time/index.html",
+    "main.012fb1d4.css.map": "/cafe-time/static/css/main.012fb1d4.css.map",
+    "main.f0821ded.js.map": "/cafe-time/static/js/main.f0821ded.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.012fb1d4.css",
+    "static/js/main.f0821ded.js"
+  ]
+}
