@@ -19,7 +19,7 @@ const Home = () => {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="d-block w-100" src="./img/food1.jpg" alt="slide-1" />
+                        <img className="d-block w-100" src="https://github.com/Malay-Thakkar/cafe-time/blob/master/client/public/img/food1.jpg?raw=true" alt="slide-1" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -28,7 +28,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food3.jpg" alt="slide-2" />
+                        <img className="d-block w-100" src="/cafe-time/img/food3.jpg" alt="slide-2" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -36,7 +36,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button> </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food4.jpg" alt="slide-3" />
+                        <img className="d-block w-100" src="/cafe-time/img/food4.jpg" alt="slide-3" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -44,7 +44,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food2.jpg" alt="slide-4" />
+                        <img className="d-block w-100" src="/cafe-time/img/food2.jpg" alt="slide-4" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -52,7 +52,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food5.jpg" alt="slide-5" />
+                        <img className="d-block w-100" src="/cafe-time/img/food5.jpg" alt="slide-5" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -60,7 +60,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food6.jpg" alt="slide-6" />
+                        <img className="d-block w-100" src="/cafe-time/img/food6.jpg" alt="slide-6" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -68,7 +68,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food7.jpg" alt="slide-7" />
+                        <img className="d-block w-100" src="/cafe-time/img/food7.jpg" alt="slide-7" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
@@ -76,7 +76,7 @@ const Home = () => {
                                 <Link to="/product"><p className="font-weight-bold font-italic mt-2">Order now!</p></Link></button>   </div>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block w-100" src="./img/food8.jpg" alt="slide-8" />
+                        <img className="d-block w-100" src="/cafe-time/img/food8.jpg" alt="slide-8" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
