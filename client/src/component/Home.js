@@ -19,7 +19,7 @@ const Home = () => {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="d-block w-100" src="./img/food1.jpg" alt="slide-1" />
+                        <img className="d-block w-100" src="https://github.com/Malay-Thakkar/cafe-time/blob/master/client/public/img/food1.jpg?raw=true" alt="slide-1" />
                         <div className="carousel-caption d-none d-md-block ">
                             <h5 className="text-left font-weight-bold font-italic">Are you hungry?</h5>
                             <h1 className="text-left font-weight-bold font-italic" >Don't Wait!</h1>
