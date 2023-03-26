@@ -54,19 +54,17 @@ export const Profile = () => {
 
     return (
         <>
+        <h1 className='font-bold my-8 '>Profile</h1>
             <div className='container mx-auto pb-24 m-5 '>
-                <h1 className='font-bold my-8 '>Profile</h1>
                 <div className="vh-100 d-flex justify-content-center align-items-center m-2">
                     <div className="col-md-5 p-5 shadow-sm border rounded border-primary m-5">
                         <h5>Name: {name}</h5>
                         <h5>Email id: {email}</h5>
                         <h5>User id: {userid}</h5>
                         <h5>Role: {role}</h5>
-
                         <div className="d-grid">
                             <button className="btn btn-primary" onClick={() => logout()}>Logout</button>
                         </div>
-
                     </div>
                 </div>
             </div>

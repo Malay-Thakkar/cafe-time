@@ -106,7 +106,7 @@ const Navigationbar = (props) => {
             <div className="collapse navbar-collapse justify-between" id="navbarSupportedContent">
               <ul className="items-center text-black navbar-nav mr-auto spaceing">
                 {isadmin ? <li><Link to="/dashboard" id="dashboard">Dashboard</Link></li> : null}
-                <li className="ml-6"><Link to="/">Home</Link></li>
+                <li className="ml-6"><Link to="/cafe-time">Home</Link></li>
                 <li className="ml-6"><Link to="/product">Product</Link></li>
                 <li className="ml-6"><Link to="/me">Profile</Link></li>
                 <li className="ml-6"><Link to="/login">Login</Link></li>
@@ -177,7 +177,7 @@ const Navigationbar = (props) => {
               {isadmin ? <Route path="/salse" element={<Deleteproduct />} /> : null}
               {islogin ? <Route path="/me" element={<Profile />} /> : null}
               {/* <Route path="/me" element={<Profile />} /> */}
-              <Route path="/" element={<Home />} />
+              <Route path="/cafe-time" element={<Home />} />
               <Route path="/product" exeact element={<Product />} />
               <Route path="/product/:_id" exeact element={<SingleProduct />} />
               <Route path="/login" element={<Login />} />

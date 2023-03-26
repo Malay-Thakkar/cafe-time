@@ -77,7 +77,7 @@ const Cart = () => {
 
     return (
         !products.length
-            ? <img className="mx-auto w-1/2 m-20" src="/img/empty-cart.png" alt="empty-cart" />
+            ? <img className="mx-auto w-1/2 m-20" src="/cafe-time/img/empty-cart.png" alt="empty-cart" />
             :
             <div className="container mx-auto lg:w-1/2 w-full pb-24">
                 <h1 className="my-12 font-bold">Cart items</h1>
